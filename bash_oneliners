@@ -1,3 +1,5 @@
 # KILL all screen sessions at once
-
 screen -ls | grep pts | cut -d. -f1 | awk '{print $1}' | xargs kill
+
+# build a oxid package without pics and unwanted shit
+tar --exclude="*.sql" --exclude="*.jpg" --exclude="log/" --exclude="sphinx/" --exclude="sql/" --exclude="*.txt" --exclude="*.tgz" -cf shop.tar *
