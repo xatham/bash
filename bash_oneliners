@@ -6,4 +6,4 @@ tar --exclude="*.sql" --exclude="*.jpg" --exclude="log/" --exclude="sphinx/" --e
 
 # get amodules array directly from shell
 
-mysql -N -B database -u user -ppassword -e "select DECODE(oxvarvalue, 'fq45QS09_fqyx09239QQ') from oxconfig where oxvarname = 'aModules';" | tr ":" "\n" | sed '/^[0-9]\{1,3\}$/d' | sed 's/;s//g' | sed 's/"//g' | awk 'NR%2 {printf $0 " => ";next;}1'"'
+mysql -N -B database -u user -ppassword -e "select DECODE(oxvarvalue, 'fq45QS09_fqyx09239QQ') from oxconfig where oxvarname = 'aModules';" | tr ":" "\n" | sed '/^[0-9]\{1,3\}$/d' | sed 's/;s//g' | sed 's/"//g' | awk 'NR%2 {printf $0 " => ";next;}1'""
