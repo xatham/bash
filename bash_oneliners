@@ -31,3 +31,6 @@ svn status | grep -e "^?" | awk '{print $2}' | xargs -I {} svn add {}
 # replace strings in multiple files (recursively), not MAC compatible
 grep -rli 'stringa' . | xargs -i@ sed -i 's/stringa/stringb/g' @
 
+# print content with added filename
+
+find . | grep composer.json | xargs -I % sh -c 'echo %; cat %'
