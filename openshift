@@ -1,0 +1,4 @@
+# spawn shell on only running pod
+
+oc rsh `oc get all | grep Running | awk '{print $1}'`"
+

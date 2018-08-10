@@ -1,0 +1,5 @@
+# restart nginx/fpm
+
+sudo service nginx restart && /etc/init.d/php7.1-fpm restart
+
+
